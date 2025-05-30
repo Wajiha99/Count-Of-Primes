@@ -51,7 +51,7 @@ Note : Solving this question on leetcode will give you TLE, To avoid TLE we have
 Steps :
 1)Assume all numbers from 2 to N are prime numbers.
 2)Which numbers are completely divisible eliminate them.
-3)Remaining numbers which are not divisible are prime numbers.
+3)Remaining numbers which are not divisible are prime numbers and return their count.
 class Solution {
     public int countPrimes(int n) {
      boolean[] isPrime = new boolean[n];
