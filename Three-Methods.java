@@ -48,3 +48,23 @@ public class Solution {
 }
 Note : Solving this question on leetcode will give you TLE, To avoid TLE we have one concept for counting primes within a range from 1 to N, i.e Sieve Of Eratosthenes.
 3)Sieve Of Eratosthenes : 
+Steps :
+1)Assume all numbers from 2 to N are prime numbers.
+2)Which numbers are completely divisible eliminate them.
+3)Remaining numbers which are not divisible are prime numbers.
+class Solution {
+    public int countPrimes(int n) {
+     boolean[] isPrime = new boolean[n];
+        Arrays.fill(isPrime,true);
+        int count = 0;
+        for(int i=2;i<n;i++){
+            if(isPrime[i] == true){
+              count++;
+            for(int j=i*2;j<n;j=j+i){
+                isPrime[j] = false;
+            }   
+            }
+        }   
+        return count;
+    }
+}
